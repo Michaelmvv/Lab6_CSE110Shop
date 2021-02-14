@@ -7,8 +7,8 @@ window.addEventListener('DOMContentLoaded', () => {
         .then(response => response.json())
         .then(data => {
           localStorage.setItem('ProductArray', JSON.stringify(data));
-        })
-        .then(addProducts());
+          addProducts();
+        });
   } else {
     addProducts();
   }
