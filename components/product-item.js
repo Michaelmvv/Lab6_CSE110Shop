@@ -20,6 +20,7 @@ class ProductItem extends HTMLElement {
     const img = wrapper.appendChild(document.createElement('img'));
     img.setAttribute('src', foo['image']);
     img.setAttribute('alt', foo['title']);
+    img.setAttribute('width', 200);
 
     const title = wrapper.appendChild(document.createElement('p'));
     title.setAttribute('class', 'title');
