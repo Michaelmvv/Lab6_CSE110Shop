@@ -30,7 +30,18 @@ class ProductItem extends HTMLElement {
     price.textContent = '$' + foo['price'];
 
     const button = wrapper.appendChild(document.createElement('button'));
-    button.textContent = 'Add to Cart';
+    button.textContent =
+        inCartArray[foo['id']] ? 'Remove from Cart' : 'Add to Cart';
+    button.onclick =
+        () => {
+          if (button.textContent == 'Add to Cart') {
+            button.textContent = 'Remove from Cart';
+            updateCartCount(1, foo['id']);
+          } else {
+            button.textContent = 'Add to Cart';
+            updateCartCount(-1, foo['id']);
+          }
+        }
 
 
     // I don't like this....
